@@ -1,1 +1,29 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 /* You can add global styles to this file, and also import other style files */
+.word_loadding {
+  color: #dd1342;
+  text-shadow: 1px 1px #83001f, 2px 2px #83001f;
+}
+.my_spin {
+  background-color: transparent;
+  border-radius: 50%;
+  border-top: 7px solid #1171d8;
+  border-right: 7px solid #00438b;
+  border-bottom: 7px solid #dd1342;
+  border-left: 7px solid #83001f;
+  margin-left: 20px;
+  height: 60px;
+  width: 60px;
+  animation: a_my_spin 0.6s infinite ease-in;
+}
+
+@keyframes a_my_spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

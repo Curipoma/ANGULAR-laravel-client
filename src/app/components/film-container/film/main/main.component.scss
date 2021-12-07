@@ -1,0 +1,48 @@
+// .my_shadow {
+//   background-color: red;
+//   padding: 20px;
+//   filter: blur(2px);
+//   -webkit-filter: blur(2vw);
+//   -moz-filter: blur(2vw);
+//   -o-filter: blur(2vw);
+//   -ms-filter: blur(2vw);
+//   -ms-transform: scale(1.1);
+//   -webkit-transform: scale(1.2);
+//   transform: scale(1.1);
+//   opacity: 0.5;
+// }
+
+// section.my_section > img {
+//   padding: 20px;
+//   margin: 20px;
+//   background-color: red;
+//   filter: blur(1.8vw);
+//   -webkit-filter: blur(2vw);
+//   -moz-filter: blur(2vw);
+//   -o-filter: blur(2vw);
+//   -ms-filter: blur(2vw);
+//   -ms-transform: scale(1.1);
+//   -webkit-transform: scale(1.1);
+//   transform: scale(1.1);
+//   opacity: 0.5;
+// }
+
+.carrucel {
+  position: relative;
+  z-index: 1;
+}
+
+.my_section {
+  position: relative;
+  z-index: 1;
+}
+
+.carrucel .my_section > .other_img {
+  filter: blur(1.8vw);
+}
+
+.other_img {
+  opacity: 1;
+  position: relative;
+  z-index: 50;
+}

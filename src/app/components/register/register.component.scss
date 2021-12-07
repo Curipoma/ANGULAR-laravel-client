@@ -1,0 +1,19 @@
+$color_correct: rgb(0, 220, 0);
+$color_incorrect: rgb(220, 0, 0);
+.correct_input {
+  border: 1px solid $color_correct;
+}
+.incorrect_input {
+  border: 1px solid $color_incorrect;
+}
+.message_correct_input {
+  background-color: $color_correct;
+  padding: 1px 10px;
+  color: black;
+}
+.message_incorrect_input {
+  background-color: $color_incorrect;
+  border: 1px solid $color_incorrect;
+  padding: 1px 10px;
+  color: white;
+}

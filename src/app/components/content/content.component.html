@@ -1,0 +1,175 @@
+<div>
+  <div class="flex justify-between">
+    <h3
+      class="
+        py-2
+        px-3
+        uppercase
+        font-bold
+        text-5xl text-lef text-gray-200
+        col-start-2 col-end-11
+        dark:text-gray-300
+        break-words
+      "
+    >
+      {{ title }}
+    </h3>
+    <div>
+      <p class="my-auto text-gray-200 font-semibold">Welcome {{ user.name }}</p>
+      <p class="my-auto text-gray-200 font-normal">{{ user.email }}</p>
+    </div>
+  </div>
+  <ul
+    class="
+      grid
+      gap-3
+      grid-cols-1
+      sm:grid-cols-2
+      md:grid-cols-3
+      lg:grid-cols-4
+      xl:grid-cols-5
+    "
+  >
+    <li *ngFor="let item of allFilms; let i = index" class="">
+      <div
+        class="
+          p-3
+          bg-gradient-to-b
+          from-red-red_3
+          to-blue-blue_2
+          dark:from-gray-700 dark:to-gray-900
+          hover:scale-105
+          transform
+          transition
+          duration-300
+          ease-in-out
+        "
+      >
+        <div class="grid grid-cols-10">
+          <img
+            class="w-6 my-auto mx-auto"
+            src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/000000/external-film-photo-studio-flatart-icons-outline-flatarticons.png"
+          />
+          <h3
+            class="
+              py-2
+              px-3
+              col-start-2 col-end-11
+              text-left
+              font-semibold
+              text-gray-200
+              dark:text-gray-300
+              break-words
+              transform
+              transition
+              duration-300
+              ease-in-out
+            "
+          >
+            {{ item.name }}
+          </h3>
+        </div>
+        <img
+          src="https://picsum.photos/200/100?randoms"
+          alt="photo"
+          class="m-auto"
+        />
+        <div
+          class="
+            my-5
+            p-2
+            grid grid-cols-10
+            rounded-md
+            bg-blue-blue_2
+            transform
+            transition
+            duration-300
+            ease-in-out
+          "
+        >
+          <img
+            class="w-5 my-auto mx-auto"
+            src="https://img.icons8.com/material-outlined/24/000000/clock--v1.png"
+          />
+          <p
+            class="
+              py-2
+              font-normal
+              text-gray-200
+              dark:text-gray-300
+              col-start-2 col-end-11
+              text-left
+              break-words
+              transform
+              transition
+              duration-300
+              ease-in-out
+            "
+          >
+            Duration: {{ item.duration }}
+          </p>
+          <img
+            class="w-5 my-auto mx-auto"
+            src="https://img.icons8.com/ios/50/000000/price-tag--v1.png"
+          />
+          <p
+            class="
+              py-2
+              font-normal
+              text-gray-200
+              dark:text-gray-300
+              col-start-2 col-end-11
+              text-left
+              break-words
+              transform
+              transition
+              duration-300
+              ease-in-outs
+            "
+          >
+            Price: {{ item.price }}
+          </p>
+        </div>
+        <div
+          class="
+            py-2
+            px-5
+            flex
+            hover:cursor-pointer hover:bg-blue-blue_2
+            transform
+            transition
+            duration-300
+            ease-in-out
+          "
+        >
+          <img
+            class="
+              w-10
+              mx-auto
+              my-auto
+              bg-white
+              rounded
+              transform
+              transition
+              duration-300
+              ease-in-out
+            "
+            src="https://img.icons8.com/ios/50/000000/play--v1.png"
+          />
+          <span
+            class="
+              my-auto
+              text-gray-50
+              font-extrabold
+              transform
+              transition
+              duration-300
+              ease-in-out
+            "
+            >play</span
+          >
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

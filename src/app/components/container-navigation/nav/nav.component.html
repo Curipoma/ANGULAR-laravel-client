@@ -1,0 +1,313 @@
+<nav id="nav" class="py-1">
+  <ul
+    class="
+      mt-1
+      p-1
+      sm:p-2
+      flex flex-col
+      sm:flex-row
+      justify-between
+      rounded
+      border border-purple-900
+      dark:border-blue-600
+      bg-purple-600
+      dark:bg-blue-blue_2
+      shadow-lg
+      transition
+      duration-300
+      ease-in-out
+    "
+  >
+    <li class="h-full">
+      <a routerLink="/content" class="flex gap-x-4 h-full">
+        <img
+          class="w-10 mx-auto rounded bg-gray-200"
+          src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/000000/external-film-photo-studio-flatart-icons-outline-flatarticons.png"
+        />
+        <span
+          class="
+            my-auto
+            text-gray-50
+            uppercase
+            invisible
+            hidden
+            sm:visible sm:block
+            transition
+            duration-300
+            ease-in-out
+          "
+          >Home</span
+        >
+      </a>
+    </li>
+    <li class="h-full flex justify-end visible sm:hidden sm:invisible">
+      <button (click)="menu()" class="bg-gray-500 rounded">
+        <img
+          class="
+            p-1
+            w-10
+            rounded-sm
+            bg-blue-blue_2
+            dark:bg-gray-500
+            transition
+            duration-300
+            ease-in-out
+          "
+          src="https://img.icons8.com/material-outlined/96/000000/menu--v1.png"
+        />
+      </button>
+    </li>
+    <li class="min-h-max">
+      <ul
+        id="menu"
+        class="
+          hidden
+          invisible
+          sm:visible
+          h-full
+          p-2
+          sm:px-2 sm:py-0 sm:flex
+          flex-col
+          sm:flex-row
+          justify-between
+          transition
+          duration-300
+          ease-in-out
+        "
+      >
+        <li
+          class="
+            h-full
+            w-auto
+            my-auto
+            rounded
+            invisible
+            hidden
+            border border-transparent
+            hover:border-purple-900 hover:bg-white
+            dark:hover:border-blue-500 dark:hover:bg-blue-900
+            transition
+            duration-300
+            ease-in-out
+          "
+          id="link_admin"
+        >
+          <a routerLink="/films" class="w-full my-auto flex h-full">
+            <span
+              class="
+                px-5
+                w-full
+                h-full
+                text-left text-base text-gray-50
+                hover:text-gray-900
+                dark:hover:text-gray-50
+                flex
+                justify-center
+                items-center
+                break-words
+                transition
+                duration-300
+                ease-in-out
+              "
+            >
+              Films
+            </span>
+          </a>
+        </li>
+        <li
+          class="
+            h-full
+            w-auto
+            my-auto
+            rounded
+            invisible
+            hidden
+            border border-transparent
+            hover:border-purple-900 hover:bg-white
+            dark:hover:border-blue-500 dark:hover:bg-blue-900
+            transition
+            duration-300
+            ease-in-out
+          "
+          id="link_guest"
+        >
+          <a routerLink="/register" class="w-full my-auto flex h-full">
+            <span
+              class="
+                px-5
+                w-full
+                h-full
+                text-left text-base text-gray-50
+                hover:text-gray-900
+                dark:hover:text-gray-50
+                flex
+                justify-center
+                items-center
+                break-words
+                transition
+                duration-300
+                ease-in-out
+              "
+            >
+              Register
+            </span>
+          </a>
+        </li>
+        <li
+          class="
+            h-full
+            w-auto
+            my-auto
+            rounded
+            invisible
+            hidden
+            border border-transparent
+            hover:border-purple-900 hover:bg-white
+            dark:hover:border-blue-500 dark:hover:bg-blue-900
+            transition
+            duration-300
+            ease-in-out
+          "
+          id="link_guest"
+        >
+          <a routerLink="/login" class="w-full my-auto flex h-full">
+            <span
+              class="
+                px-5
+                w-full
+                h-full
+                text-left text-base text-gray-50
+                hover:text-gray-900
+                dark:hover:text-gray-50
+                flex
+                justify-center
+                items-center
+                break-words
+                transition
+                duration-300
+                ease-in-out
+              "
+            >
+              Login
+            </span>
+          </a>
+        </li>
+        <li
+          class="
+            h-full
+            w-auto
+            my-auto
+            rounded
+            invisible
+            hidden
+            border border-transparent
+            hover:border-purple-900 hover:bg-white
+            dark:hover:border-blue-500 dark:hover:bg-blue-900
+            transition
+            duration-300
+            ease-in-out
+          "
+          id="link_client"
+        >
+          <a routerLink="/content" class="w-full my-auto flex h-full">
+            <span
+              class="
+                px-5
+                w-full
+                h-full
+                text-left text-base text-gray-50
+                hover:text-gray-900
+                dark:hover:text-gray-50
+                flex
+                justify-center
+                items-center
+                break-words
+                transition
+                duration-300
+                ease-in-out
+              "
+            >
+              Content
+            </span>
+          </a>
+        </li>
+        <li
+          class="
+            h-full
+            w-auto
+            my-auto
+            rounded
+            invisible
+            hidden
+            border border-transparent
+            hover:border-purple-900 hover:bg-white
+            dark:hover:border-blue-500 dark:hover:bg-blue-900
+            transition
+            duration-300
+            ease-in-out
+          "
+          id="link_auth"
+        >
+          <a routerLink="/content" class="w-full my-auto flex h-full">
+            <span
+              class="
+                px-5
+                w-full
+                h-full
+                text-left text-base text-gray-50
+                hover:text-gray-900
+                dark:hover:text-gray-50
+                flex
+                justify-center
+                items-center
+                break-words
+                transition
+                duration-300
+                ease-in-out
+              "
+              id="logout"
+            >
+              Log out
+            </span>
+          </a>
+        </li>
+        <li
+          class="
+            h-full
+            w-auto
+            my-auto
+            rounded
+            border border-transparent
+            hover:border-purple-900 hover:bg-white
+            dark:hover:border-blue-500 dark:hover:bg-blue-900
+            transition
+            duration-300
+            ease-in-out
+          "
+        >
+          <button
+            id="mode"
+            class="
+              px-5
+              w-full
+              h-full
+              text-left text-base text-gray-50
+              hover:text-gray-900
+              dark:hover:text-gray-50
+              flex
+              justify-center
+              items-center
+              break-words
+              uppercase
+              transition
+              duration-300
+              ease-in-out
+            "
+          >
+            Mode
+          </button>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>

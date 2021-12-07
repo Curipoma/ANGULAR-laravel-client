@@ -1,0 +1,82 @@
+<table class="w-full">
+  <thead>
+    <tr
+      class="
+        bg-red-red_3
+        hover:bg-red-800
+        dark:bg-blue-blue_2 dark:hover:bg-blue-800
+      "
+    >
+      <th class="p-5 text-gray-200 text-left font-extrabold uppercase">#</th>
+      <th class="p-5 text-gray-200 text-left font-extrabold uppercase">Name</th>
+      <th class="p-5 text-gray-200 text-left font-extrabold uppercase">
+        Price
+      </th>
+      <th class="p-5 text-gray-200 text-left font-extrabold uppercase">
+        Duration
+      </th>
+    </tr>
+  </thead>
+  <tbody class="bg-blue-blue_2 dark:bg-gray-800">
+    <tr
+      *ngFor="let item of films; index as i"
+      class="
+        hover:bg-blue-600
+        dark:hover:bg-gray-400
+        text-gray-300
+        hover:text-gray-900
+      "
+      id="row_{{ i }}"
+    >
+      <th>
+        <button
+          class="
+            h-full
+            w-full
+            py-2
+            px-5
+            text-left text-gray-200
+            font-bold
+            bg-blue-900
+            dark:bg-blue-blue_2
+          "
+        >
+          {{ i + 1 }}
+        </button>
+      </th>
+      <th
+        class="
+          py-2
+          px-5
+          text-left
+          focus:text-gray-900 focus:outline-none focus:bg-yellow-500
+        "
+        contenteditable="true"
+      >
+        {{ item.name }}
+      </th>
+      <th
+        class="
+          py-2
+          px-5
+          text-left
+          focus:text-gray-900 focus:outline-none focus:bg-yellow-500
+        "
+        contenteditable="true"
+      >
+        {{ item.price }}
+      </th>
+      <th
+        class="
+          py-2
+          px-5
+          text-left
+          focus:text-gray-900 focus:outline-none focus:bg-yellow-500
+        "
+        contenteditable="true"
+      >
+        {{ item.duration }}
+      </th>
+    </tr>
+  </tbody>
+</table>
