@@ -149,15 +149,60 @@
     <span id="message_duration"></span>
   </div>
   <div class="w-full grid grid-cols-1 gap-y-1">
-    <label for="filmvideo">Film video</label>
+    <label
+      for="filmvideo"
+      class="
+        text-gray-900
+        dark:text-gray-200
+        transition
+        duration-300
+        ease-in-out
+      "
+      >Film video</label
+    >
     <input
       type="file"
       name="filmvideo"
       id="filmvideo"
+      accept="video/mp4"
       formControlName="filmvideo"
+      class="
+        text-gray-900
+        dark:text-gray-200
+        transition
+        duration-300
+        ease-in-out
+      "
     />
-    <!-- accept="video/mp4" -->
     <span id="message_filmvideo"></span>
+  </div>
+  <div class="w-full grid grid-cols-1 gap-y-1">
+    <label
+      for="filmcover"
+      class="
+        text-gray-900
+        dark:text-gray-200
+        transition
+        duration-300
+        ease-in-out
+      "
+      >Film cover</label
+    >
+    <input
+      type="file"
+      name="filmcover"
+      id="filmcover"
+      accept="image/png,image/jpeg"
+      formControlName="filmcover"
+      class="
+        text-gray-900
+        dark:text-gray-200
+        transition
+        duration-300
+        ease-in-out
+      "
+    />
+    <span id="message_filmcover"></span>
   </div>
   <input
     class="
@@ -180,4 +225,7 @@
     type="submit"
     value="Submit"
   />
+
+  <label for="file">File progress:</label>
+  <progress id="file" max="100" value="70">70%</progress>
 </form>

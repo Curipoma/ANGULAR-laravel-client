@@ -1,24 +1,24 @@
-<nav id="nav" class="py-1">
+<nav id="nav" class="z-10 max-w-7xl w-full">
   <ul
     class="
-      mt-1
+      w-full
       p-1
       sm:p-2
       flex flex-col
       sm:flex-row
       justify-between
-      rounded
-      border border-purple-900
-      dark:border-blue-600
-      bg-purple-600
-      dark:bg-blue-blue_2
-      shadow-lg
-      transition
-      duration-300
-      ease-in-out
+      border border-t-0
+      rounded-bl rounded-br
+      border-blue-blue_bg_1
+      dark:border-blue-blue_bg_2
+      bg-gradient-to-r
+      from-blue-blue_bg_1
+      to-blue-blue_bg_2
+      dark:bg-blue-blue_2 dark:from-blue-900 dark:to-gray-900
+      shadow-2xl
     "
   >
-    <li class="h-full">
+    <li class="flex flex-row justify-between">
       <a routerLink="/content" class="flex gap-x-4 h-full">
         <img
           class="w-10 mx-auto rounded bg-gray-200"
@@ -32,27 +32,23 @@
             invisible
             hidden
             sm:visible sm:block
-            transition
-            duration-300
-            ease-in-out
           "
           >Home</span
         >
       </a>
-    </li>
-    <li class="h-full flex justify-end visible sm:hidden sm:invisible">
-      <button (click)="menu()" class="bg-gray-500 rounded">
+      <button
+        (click)="menu()"
+        class="
+          bg-gray-500
+          rounded
+          h-full
+          justify-end
+          visible
+          sm:hidden sm:invisible
+        "
+      >
         <img
-          class="
-            p-1
-            w-10
-            rounded-sm
-            bg-blue-blue_2
-            dark:bg-gray-500
-            transition
-            duration-300
-            ease-in-out
-          "
+          class="p-1 w-10 rounded-sm bg-blue-blue_2 dark:bg-gray-500"
           src="https://img.icons8.com/material-outlined/96/000000/menu--v1.png"
         />
       </button>
@@ -70,9 +66,6 @@
           flex-col
           sm:flex-row
           justify-between
-          transition
-          duration-300
-          ease-in-out
         "
       >
         <li
@@ -84,11 +77,40 @@
             invisible
             hidden
             border border-transparent
-            hover:border-purple-900 hover:bg-white
+            hover:border-purple-900 hover:bg-purple-50
             dark:hover:border-blue-500 dark:hover:bg-blue-900
-            transition
-            duration-300
-            ease-in-out
+          "
+          id="link_auth"
+        >
+          <a routerLink="/perfil" class="w-full my-auto flex h-full">
+            <span
+              class="
+                px-5
+                w-full
+                h-full
+                text-left text-base text-gray-50
+                hover:text-gray-900
+                dark:hover:text-gray-50
+                flex
+                justify-center
+                items-center
+                break-words
+              "
+              >{{ user.name }}</span
+            >
+          </a>
+        </li>
+        <li
+          class="
+            h-full
+            w-auto
+            my-auto
+            rounded
+            invisible
+            hidden
+            border border-transparent
+            hover:border-purple-900 hover:bg-purple-50
+            dark:hover:border-blue-500 dark:hover:bg-blue-900
           "
           id="link_admin"
         >
@@ -105,9 +127,6 @@
                 justify-center
                 items-center
                 break-words
-                transition
-                duration-300
-                ease-in-out
               "
             >
               Films
@@ -119,15 +138,25 @@
             h-full
             w-auto
             my-auto
+            text-gray-200
+            bg-blue-blue_bg_1
+            dark:bg-blue-900
+            rounded
+          "
+        >
+          <span id="message" class="my-auto flex items-center h-full"></span>
+        </li>
+        <li
+          class="
+            h-full
+            w-auto
+            my-auto
             rounded
             invisible
             hidden
             border border-transparent
-            hover:border-purple-900 hover:bg-white
+            hover:border-purple-900 hover:bg-purple-50
             dark:hover:border-blue-500 dark:hover:bg-blue-900
-            transition
-            duration-300
-            ease-in-out
           "
           id="link_guest"
         >
@@ -144,9 +173,6 @@
                 justify-center
                 items-center
                 break-words
-                transition
-                duration-300
-                ease-in-out
               "
             >
               Register
@@ -162,11 +188,8 @@
             invisible
             hidden
             border border-transparent
-            hover:border-purple-900 hover:bg-white
+            hover:border-purple-900 hover:bg-purple-50
             dark:hover:border-blue-500 dark:hover:bg-blue-900
-            transition
-            duration-300
-            ease-in-out
           "
           id="link_guest"
         >
@@ -183,9 +206,6 @@
                 justify-center
                 items-center
                 break-words
-                transition
-                duration-300
-                ease-in-out
               "
             >
               Login
@@ -201,7 +221,7 @@
             invisible
             hidden
             border border-transparent
-            hover:border-purple-900 hover:bg-white
+            hover:border-purple-900 hover:bg-purple-50
             dark:hover:border-blue-500 dark:hover:bg-blue-900
             transition
             duration-300
@@ -222,9 +242,6 @@
                 justify-center
                 items-center
                 break-words
-                transition
-                duration-300
-                ease-in-out
               "
             >
               Content
@@ -240,11 +257,8 @@
             invisible
             hidden
             border border-transparent
-            hover:border-purple-900 hover:bg-white
+            hover:border-purple-900 hover:bg-purple-50
             dark:hover:border-blue-500 dark:hover:bg-blue-900
-            transition
-            duration-300
-            ease-in-out
           "
           id="link_auth"
         >
@@ -261,9 +275,6 @@
                 justify-center
                 items-center
                 break-words
-                transition
-                duration-300
-                ease-in-out
               "
               id="logout"
             >
@@ -278,11 +289,8 @@
             my-auto
             rounded
             border border-transparent
-            hover:border-purple-900 hover:bg-white
+            hover:border-purple-900 hover:bg-purple-50
             dark:hover:border-blue-500 dark:hover:bg-blue-900
-            transition
-            duration-300
-            ease-in-out
           "
         >
           <button
@@ -299,9 +307,6 @@
               items-center
               break-words
               uppercase
-              transition
-              duration-300
-              ease-in-out
             "
           >
             Mode

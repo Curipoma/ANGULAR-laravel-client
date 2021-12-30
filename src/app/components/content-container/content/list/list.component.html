@@ -1,0 +1,169 @@
+<div class="w-full relative h-auto flex justify-center items-center">
+  <ul
+    class="
+      w-full
+      grid grid-cols-1
+      sm:grid-cols-2
+      lg:grid-cols-1
+      gap-y-2 gap-x-2
+    "
+    id="videos"
+  >
+    <li *ngFor="let film of allFilms; let i = index">
+      <div class="relative w-full h-20">
+        <img
+          class="absolute p-2 w-full h-full filter blur shadow-2xl"
+          src="{{ film.cover_page_url }}"
+          alt="cover film"
+        />
+        <div
+          class="
+            absolute
+            w-full
+            h-full
+            border
+            border-blue-blue_bg_1
+            dark:border-blue-700
+            rounded
+            bg-blue-blue_bg_2
+            dark:bg-blue-900
+            bg-opacity-60
+            shadow-2xl
+          "
+        ></div>
+        <div
+          class="absolute p-4 w-full h-20 flex flex-row justify-between gap-x-4"
+        >
+          <div class="relative w-14 h-full overflow-hidden">
+            <img
+              class="relative w-full h-full rounded"
+              src="{{ film.cover_page_url }}"
+              alt="cover
+            film"
+            />
+          </div>
+          <div
+            class="
+              relative
+              w-full
+              whitespace-nowrap
+              overflow-hidden overflow-ellipsis
+            "
+          >
+            <h3 class="text-gray-200">
+              {{ film.name }}
+            </h3>
+            <p class="text-gray-200">
+              {{ film.duration }}
+            </p>
+          </div>
+        </div>
+        <div class="absolute w-full h-full opacity-0 hover:opacity-100">
+          <button
+            (click)="view(film.id)"
+            class="absolute w-full h-full flex justify-center items-center"
+          >
+            <img
+              class="absolute p-2 w-10 h-10 bg-blue-blue_bg_1 rounded-full"
+              src="https://img.icons8.com/ios/50/000000/play--v1.png"
+              alt="icon play"
+            />
+          </button>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div
+  id="contn_bottons_pag"
+  class="
+    mt-2
+    relative
+    flex flex-col
+    sm:flex-row
+    justify-between
+    gap-y-1 gap-x-10
+    p-2
+    rounded
+    border
+    border-blue-blue_bg_1
+    dark:border-blue-blue_bg_2
+    shadow-2xl
+  "
+>
+  <div
+    id="pag_steps"
+    class="w-full flex flex-row gap-x-1 overflow-x-scroll"
+  ></div>
+  <div id="pag_jumps" class="flex flex-row justify-between">
+    <button
+      id="first_page"
+      class="
+        px-4
+        text-xl text-gray-900
+        dark:text-gray-300 dark:hover:text-gray-800
+        bg-purple-50
+        hover:bg-purple-300
+        dark:bg-gray-800 dark:hover:bg-gray-300
+        border border-indigo-500
+        dark:border-gray-600
+        rounded
+        lowercase
+      "
+    >
+      «
+    </button>
+    <button
+      id="previous_page"
+      class="
+        px-4
+        text-sm text-gray-900
+        dark:text-gray-300 dark:hover:text-gray-800
+        bg-purple-50
+        hover:bg-purple-300
+        dark:bg-gray-800 dark:hover:bg-gray-300
+        border border-indigo-500
+        dark:border-gray-600
+        rounded
+        lowercase
+      "
+    >
+      <
+    </button>
+    <button
+      id="next_page"
+      class="
+        px-4
+        text-sm text-gray-900
+        dark:text-gray-300 dark:hover:text-gray-800
+        bg-purple-50
+        hover:bg-purple-300
+        dark:bg-gray-800 dark:hover:bg-gray-300
+        border border-indigo-500
+        dark:border-gray-600
+        rounded
+        lowercase
+      "
+    >
+      >
+    </button>
+    <button
+      id="last_page"
+      class="
+        px-4
+        text-xl text-gray-900
+        dark:text-gray-300 dark:hover:text-gray-800
+        bg-purple-50
+        hover:bg-purple-300
+        dark:bg-gray-800 dark:hover:bg-gray-300
+        border border-indigo-500
+        dark:border-gray-600
+        rounded
+        lowercase
+      "
+    >
+      »
+    </button>
+  </div>
+</div>

@@ -18,11 +18,12 @@ export class FilmComponent implements OnInit, OnDestroy {
   @ViewChild(ViewFilmDirective, { static: true })
   profileHost: ViewFilmDirective;
   private destroySubject = new Subject();
+
   constructor(
     private cFilmService: CFilmService,
     private vcr: ViewContainerRef
   ) {
-    this.profileHost = { viewContainerRef: vcr };
+    this.profileHost = { viewContainerRef: this.vcr };
   }
 
   ngOnInit(): void {

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AuthUserService } from '../../../services/auth-user/auth-user.service';
 import { TokenService } from '../../../services/auth-user/token.service';
 import { CNavService } from '../../../services/components/c-nav.service';
+import { UsersService } from '../../../services/db/users.service';
 import { User } from '../../../models/User.interface';
 
 @Component({
@@ -18,7 +19,8 @@ export class NavComponent implements OnInit {
     private router: Router,
     private authUserService: AuthUserService,
     private cNavService: CNavService,
-    private tokenService: TokenService
+    private tokenService: TokenService,
+    private usersService: UsersService
   ) {
     this.user = {};
   }
@@ -47,17 +49,27 @@ export class NavComponent implements OnInit {
       }
     }
   }
+
   menu() {
     var menuDrop = document.getElementById('menu');
     menuDrop?.classList.toggle('invisible');
     menuDrop?.classList.toggle('hidden');
   }
+
+  messageLogout(dataMessage: String) {
+    var message: any = document.getElementById('message');
+    message.classList.add('px-5');
+    message.textContent = dataMessage;
+  }
+
   ngOnInit(): void {
     var theme: any = localStorage.getItem('theme');
     var nav: any = document.getElementById('nav');
     var menu: any = document.querySelectorAll('#menu li');
 
-    this.user = this.authUserService.getData();
+    if (this.tokenService.getToken()) {
+      this.user = this.authUserService.getData();
+    }
     menu.forEach((e: any) => {
       if (this.tokenService.getToken() && this.user) {
         if (e.id === 'link_auth') {
@@ -102,6 +114,12 @@ export class NavComponent implements OnInit {
 
     nav.addEventListener('click', (e: any): any => {
       if (e.target.id == 'logout') {
+        this.usersService
+          .logoutUser(this.authUserService.getData().id)
+          .subscribe((data: any) => {
+            this.messageLogout(data['message'].toString());
+          });
+
         this.tokenService.removeToken();
         this.authUserService.removeCookie();
         this.router.navigate(['login']);
@@ -120,6 +138,7 @@ export class NavComponent implements OnInit {
         setTimeout(function () {
           var loading: any = document.getElementById('loading');
           loading.classList.add('invisible');
+          loading.style.opacity = '0';
         }, 200);
         break;
       }

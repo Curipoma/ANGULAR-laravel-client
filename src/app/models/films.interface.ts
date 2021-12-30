@@ -4,4 +4,5 @@ export interface Films {
   price?: string;
   duration?: string;
   video_url?: any;
+  cover_page_url?: any;
 }

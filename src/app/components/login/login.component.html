@@ -1,5 +1,6 @@
 <form
   class="
+    relative
     px-5
     py-9
     max-w-md
@@ -13,9 +14,6 @@
     bg-gray-200
     dark:bg-gray-900
     shadow-lg
-    transition
-    duration-300
-    ease-in-out
   "
   [formGroup]="formGroup"
   id="form"
@@ -27,23 +25,11 @@
       text-center text-lg
       font-medium
       uppercase
-      transition
-      duration-300
-      ease-in-out
     "
   >
     Login
   </h3>
-  <label
-    class="
-      mt-3
-      text-gray-700
-      dark:text-gray-200
-      transition
-      duration-300
-      ease-in-out
-    "
-    for="email"
+  <label class="mt-3 text-gray-700 dark:text-gray-200" for="email"
     >Email
     <input
       class="
@@ -55,9 +41,6 @@
         border border-gray-400
         dark:border-gray-700
         rounded
-        transition
-        duration-300
-        ease-in-out
       "
       type="text"
       name="email"
@@ -66,16 +49,7 @@
     />
     <span id="message_email"></span>
   </label>
-  <label
-    class="
-      mt-3
-      text-gray-700
-      dark:text-gray-200
-      transition
-      duration-300
-      ease-in-out
-    "
-    for="password"
+  <label class="mt-3 text-gray-700 dark:text-gray-200" for="password"
     >Password
     <input
       class="
@@ -87,9 +61,6 @@
         border border-gray-400
         dark:border-gray-700
         rounded
-        transition
-        duration-300
-        ease-in-out
       "
       type="password"
       name="password"
@@ -114,9 +85,6 @@
       dark:bg-yellow-500 dark:hover:bg-yellow-600
       font-medium
       rounded
-      transition
-      duration-300
-      ease-in-out
     "
     type="submit"
     value="Submit"

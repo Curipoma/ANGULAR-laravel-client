@@ -1,0 +1,101 @@
+<section class="shadow-2xl">
+  <section>
+    <video
+      controls
+      src="{{ film.video_url }}"
+      class="w-full max-h-96 h-full bg-black"
+    ></video>
+  </section>
+  <section>
+    <div
+      class="
+        flex
+        gap-x-2
+        flex-row
+        justify-between
+        py-1
+        px-5
+        bg-indigo-200
+        dark:bg-gray-800
+        border border-indigo-300
+        dark:border-indigo-800
+        transition
+        duration-300
+        ease-in-out
+      "
+    >
+      <div class="flex flex-row gap-x-4 overflow-hidden object-cover my-auto">
+        <img
+          class="w-10 h-10 rounded-full"
+          src="{{ film.cover_page_url }}"
+          alt=""
+        />
+        <div class="flex flex-row gap-x-2">
+          <p
+            class="
+              my-auto
+              text-gray-900
+              dark:text-gray-300
+              transition
+              duration-300
+              ease-in-out
+              font-semibold
+            "
+          >
+            {{ film.name }}
+          </p>
+        </div>
+      </div>
+      <div class="my-auto flex justify-between">
+        <div class="flex flex-row gap-x-3">
+          <a
+            href="http://192.168.100.17:8000/api/films/download/image/{{
+              film.id
+            }}"
+            class="
+              py-1
+              px-3
+              flex flex-row
+              gap-x-2
+              text-gray-900
+              dark:text-gray-300 dark:hover:text-gray-900
+              hover:bg-white
+              rounded-3xl
+              transition
+              duration-300
+              ease-in-out
+            "
+            ><span>Image</span>
+            <img
+              class="w-5 my-auto mx-auto hover:cursor-pointer"
+              src="https://img.icons8.com/external-kmg-design-flat-kmg-design/32/000000/external-download-ui-essential-kmg-design-flat-kmg-design.png"
+            />
+          </a>
+          <a
+            href="http://192.168.100.17:8000/api/films/download/video/{{
+              film.id
+            }}"
+            class="
+              py-1
+              px-3
+              flex flex-row
+              gap-x-2
+              text-gray-900
+              dark:text-gray-300 dark:hover:text-gray-900
+              hover:bg-white
+              rounded-3xl
+              transition
+              duration-300
+              ease-in-out
+            "
+            ><span>Video</span>
+            <img
+              class="w-5 my-auto mx-auto hover:cursor-pointer"
+              src="https://img.icons8.com/external-kmg-design-flat-kmg-design/32/000000/external-download-ui-essential-kmg-design-flat-kmg-design.png"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>

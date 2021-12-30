@@ -1,48 +1,68 @@
-<table class="w-full">
+<table
+  class="
+    w-full
+    my-10
+    border
+    dark:border-gray-700
+    shadow
+    transition
+    duration-300
+    ease-in-out
+  "
+>
   <thead>
     <tr
       class="
-        bg-red-red_3
-        hover:bg-red-800
-        dark:bg-blue-blue_2 dark:hover:bg-blue-800
+        border
+        dark:border-gray-700
+        text-left
+        font-extrabold
+        uppercase
+        text-gray-900
+        dark:text-gray-200
+        bg-white
+        dark:bg-blue-blue_2
+        transition
+        duration-300
+        ease-in-out
       "
     >
-      <th class="p-5 text-gray-200 text-left font-extrabold uppercase">#</th>
-      <th class="p-5 text-gray-200 text-left font-extrabold uppercase">Name</th>
-      <th class="p-5 text-gray-200 text-left font-extrabold uppercase">
-        Price
-      </th>
-      <th class="p-5 text-gray-200 text-left font-extrabold uppercase">
-        Duration
-      </th>
+      <th class="p-5">#</th>
+      <th class="p-5">Name</th>
+      <th class="p-5">Price</th>
+      <th class="p-5">Duration</th>
+      <th class="p-5">Cover film</th>
+      <th class="p-5">Video film</th>
+      <th class="p-5">Options</th>
     </tr>
   </thead>
-  <tbody class="bg-blue-blue_2 dark:bg-gray-800">
+  <tbody
+    class="bg-white dark:bg-gray-800 transition duration-300 ease-in-out"
+    id="tbody"
+  >
     <tr
-      *ngFor="let item of films; index as i"
+      *ngFor="let film of films; index as i"
       class="
         hover:bg-blue-600
         dark:hover:bg-gray-400
-        text-gray-300
-        hover:text-gray-900
+        text-gray-800
+        hover:text-gray-50
+        dark:text-gray-200 dark:hover:text-gray-900
+        transition
+        duration-300
+        ease-in-out
       "
       id="row_{{ i }}"
     >
-      <th>
-        <button
-          class="
-            h-full
-            w-full
-            py-2
-            px-5
-            text-left text-gray-200
-            font-bold
-            bg-blue-900
-            dark:bg-blue-blue_2
-          "
-        >
-          {{ i + 1 }}
-        </button>
+      <th
+        class="
+          py-2
+          px-5
+          text-left
+          focus:text-gray-900 focus:outline-none focus:bg-yellow-500
+        "
+      >
+        {{ i + 1 }}
       </th>
       <th
         class="
@@ -51,9 +71,8 @@
           text-left
           focus:text-gray-900 focus:outline-none focus:bg-yellow-500
         "
-        contenteditable="true"
       >
-        {{ item.name }}
+        {{ film.name }}
       </th>
       <th
         class="
@@ -62,9 +81,8 @@
           text-left
           focus:text-gray-900 focus:outline-none focus:bg-yellow-500
         "
-        contenteditable="true"
       >
-        {{ item.price }}
+        {{ film.price }}
       </th>
       <th
         class="
@@ -73,9 +91,71 @@
           text-left
           focus:text-gray-900 focus:outline-none focus:bg-yellow-500
         "
-        contenteditable="true"
       >
-        {{ item.duration }}
+        {{ film.duration }}
+      </th>
+      <th
+        class="
+          py-2
+          px-5
+          text-left
+          focus:text-gray-900 focus:outline-none focus:bg-yellow-500
+        "
+      >
+        <img
+          src="{{ film.cover_page_url }}"
+          class="h-16 mx-auto my-auto"
+          alt="film's img"
+        />
+      </th>
+      <th
+        class="
+          py-2
+          px-5
+          text-left
+          focus:text-gray-900 focus:outline-none focus:bg-yellow-500
+        "
+      >
+        <video
+          controls
+          src="{{ film.video_url }}"
+          class="h-32 m-auto"
+        ></video>
+      </th>
+      <th
+        id="options"
+        class="bg-white dark:bg-gray-800 transition duration-300 ease-in-out"
+      >
+        <div class="h-full flex flex-col sm:flex-row">
+          <button
+            (click)="delete(film.id)"
+            class="
+              py-1
+              px-5
+              m-auto
+              rounded
+              text-gray-200
+              bg-red-500
+              hover:bg-red-600
+            "
+          >
+            Delete
+          </button>
+          <button
+            (click)="edite(film.id)"
+            class="
+              py-1
+              px-5
+              m-auto
+              rounded
+              text-gray-200
+              bg-green-500
+              hover:bg-green-600
+            "
+          >
+            Edite
+          </button>
+        </div>
       </th>
     </tr>
   </tbody>

@@ -20,7 +20,7 @@ export class ContainerNavigationComponent implements OnInit, OnDestroy {
   private destroySubject = new Subject();
 
   constructor(private cNavService: CNavService, private vcr: ViewContainerRef) {
-    this.profileHost = { viewContainerRef: vcr };
+    this.profileHost = { viewContainerRef: this.vcr };
   }
 
   ngOnInit() {

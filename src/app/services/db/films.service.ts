@@ -1,23 +1,32 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment.prod';
 import { Films } from '../../models/films.interface';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
 export class FilmsService {
-  base: string;
+  api_domain: string;
   constructor(private httpClient: HttpClient) {
-    this.base = environment.base;
+    this.api_domain = environment.api_domain;
   }
   getAllFilms(): Observable<Films> {
-    return this.httpClient.get(`${this.base}/films`);
+    return this.httpClient.get(`${this.api_domain}/api/films`);
   }
   addFilm(film: any): Observable<Films> {
-    let headers = new HttpHeaders().set('Content-Type', 'multipart/form-data');
-    return this.httpClient.post(`${this.base}/films/store`, film, {
-      headers: headers,
-    });
+    return this.httpClient.post(`${this.api_domain}/api/films/store`, film);
+  }
+  getFilm(id: any): Observable<Films> {
+    return this.httpClient.get(`${this.api_domain}/api/films/show/${id}`);
+  }
+  updateFilm(id: any, film: any): Observable<Films> {
+    return this.httpClient.post(
+      `${this.api_domain}/api/films/update/${id}`,
+      film
+    );
+  }
+  deleteFilm(id: any): Observable<Films> {
+    return this.httpClient.delete(`${this.api_domain}/api/films/destroy/${id}`);
   }
 }

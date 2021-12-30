@@ -1,0 +1,231 @@
+<section>
+  <form
+    action="#"
+    class="
+      py-10
+      px-5
+      m-auto
+      grid grid-cols-1
+      max-w-sm
+      bg-gray-200
+      dark:bg-gray-800
+      border
+      rounded
+      border-gray-300
+      dark:border-gray-700
+      shadow-lg
+      transition
+      duration-300
+      ease-in-out
+    "
+    [formGroup]="formGroup"
+    id="formCreateFilm"
+    method="POST"
+    enctype="multipart/form-data"
+  >
+    <h1
+      class="
+        text-center
+        font-bold
+        text-gray-900
+        dark:text-gray-200
+        transition
+        duration-300
+        ease-in-out
+      "
+    >
+      Edite film
+    </h1>
+    <div class="w-full grid grid-cols-1 gap-y-1">
+      <label
+        for="name"
+        class="
+          w-full
+          text-gray-900
+          dark:text-gray-200
+          transition
+          duration-300
+          ease-in-out
+        "
+        >Name</label
+      >
+      <input
+        type="text"
+        id="name"
+        name="name"
+        class="
+          py-1
+          px-2
+          w-full
+          text-gray-900
+          dark:text-gray-200
+          bg-gray-50
+          dark:bg-gray-900 dark:hover:bg-gray-800
+          border border-gray-300
+          dark:border-gray-700
+          rounded
+          outline-none
+          transition
+          duration-300
+          ease-in-out
+        "
+        formControlName="name"
+        value="film.name"
+      />
+      <span id="message_name"></span>
+    </div>
+    <div class="w-full grid grid-cols-1 gap-y-1">
+      <label
+        for="price"
+        class="
+          w-full
+          text-gray-900
+          dark:text-gray-200
+          transition
+          duration-300
+          ease-in-out
+        "
+        >Price</label
+      >
+      <input
+        type="number"
+        id="price"
+        name="price"
+        class="
+          py-1
+          px-2
+          w-full
+          text-gray-900
+          dark:text-gray-200
+          bg-gray-50
+          dark:bg-gray-900 dark:hover:bg-gray-800
+          border border-gray-300
+          dark:border-gray-700
+          rounded
+          outline-none
+          transition
+          duration-300
+          ease-in-out
+        "
+        formControlName="price"
+        value="film.price"
+      />
+      <span id="message_price"></span>
+    </div>
+    <div class="w-full grid grid-cols-1 gap-y-1">
+      <label
+        for="duration"
+        class="
+          w-full
+          text-gray-900
+          dark:text-gray-200
+          transition
+          duration-300
+          ease-in-out
+        "
+        >Duration</label
+      >
+      <input
+        type="time"
+        id="duration"
+        name="duration"
+        class="
+          py-1
+          px-2
+          w-full
+          text-gray-900
+          dark:text-gray-200
+          bg-gray-50
+          dark:bg-gray-900 dark:hover:bg-gray-800
+          border border-gray-300
+          dark:border-gray-700
+          rounded
+          outline-none
+          transition
+          duration-300
+          ease-in-out
+        "
+        formControlName="duration"
+        value="film.diration"
+      />
+      <span id="message_duration"></span>
+    </div>
+    <div class="w-full grid grid-cols-1 gap-y-1">
+      <label
+        for="filmvideo"
+        class="
+          text-gray-900
+          dark:text-gray-200
+          transition
+          duration-300
+          ease-in-out
+        "
+        >Film video</label
+      >
+      <input
+        type="file"
+        name="filmvideo"
+        id="filmvideo"
+        accept="video/mp4"
+        formControlName="filmvideo"
+        class="
+          text-gray-900
+          dark:text-gray-200
+          transition
+          duration-300
+          ease-in-out
+        "
+      />
+      <span id="message_filmvideo"></span>
+    </div>
+    <div class="w-full grid grid-cols-1 gap-y-1">
+      <label
+        for="filmcover"
+        class="
+          text-gray-900
+          dark:text-gray-200
+          transition
+          duration-300
+          ease-in-out
+        "
+        >Film cover</label
+      >
+      <input
+        type="file"
+        name="filmcover"
+        id="filmcover"
+        accept="image/png,image/jpeg"
+        formControlName="filmcover"
+        class="
+          text-gray-900
+          dark:text-gray-200
+          transition
+          duration-300
+          ease-in-out
+        "
+      />
+      <span id="message_filmcover"></span>
+    </div>
+    <input
+      class="
+        my-3
+        p-1
+        w-full
+        text-gray-900
+        dark:text-gray-200
+        bg-yellow-500
+        dark:bg-blue-blue_2
+        hover:cursor-pointer
+        border
+        rounded
+        border-gray-300
+        dark:border-blue-700
+        transition
+        duration-300
+        ease-in-out
+      "
+      type="submit"
+      value="Submit"
+    />
+  </form>
+</section>

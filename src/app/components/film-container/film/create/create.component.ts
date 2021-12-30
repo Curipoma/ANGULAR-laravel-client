@@ -11,13 +11,14 @@ import { Films } from '../../../../models/films.interface';
 })
 export class CreateComponent implements OnInit {
   formGroup: FormGroup;
+  form: FormData;
   film: Films;
+
   constructor(
     private cFilmService: CFilmService,
     private filmsService: FilmsService,
     private formBuilder: FormBuilder
   ) {
-    this.film = {};
     this.formGroup = this.formBuilder.group({
       name: [
         '',
@@ -25,7 +26,7 @@ export class CreateComponent implements OnInit {
           Validators.required,
           Validators.pattern(/[A-Za-z0-9]/),
           Validators.minLength(1),
-          Validators.maxLength(50),
+          Validators.maxLength(100),
         ],
       ],
       price: [
@@ -38,7 +39,10 @@ export class CreateComponent implements OnInit {
       ],
       duration: ['', [Validators.required]],
       filmvideo: ['', [Validators.required]],
+      filmcover: ['', [Validators.required]],
     });
+    this.form = new FormData();
+    this.film = {};
   }
 
   changeStatusInpu(
@@ -121,16 +125,12 @@ export class CreateComponent implements OnInit {
           break;
         case 'filmvideo':
           if (this.checkForm(e.target)) {
-            let filmFile: File = <File>e.target.files[0];
-            // this.film.video_url = filmFile;
-
-            let form = new FormData();
-            form.append('image', filmFile);
-
-            console.log(form);
-            this.filmsService.addFilm(form).subscribe((data: any) => {
-              console.log(data);
-            });
+            this.form.append('filmvideo', <File>e.target.files[0]);
+          }
+          break;
+        case 'filmcover':
+          if (this.checkForm(e.target)) {
+            this.form.append('filmcover', <File>e.target.files[0]);
           }
           break;
         default:
@@ -139,9 +139,9 @@ export class CreateComponent implements OnInit {
     };
     formCreateFilm.onsubmit = () => {
       if (this.formGroup.valid) {
-        console.log(this.film);
-        this.filmsService.addFilm(this.film).subscribe((data: any) => {
-          console.log(data);
+        this.form.append('film', JSON.stringify(this.film));
+        this.filmsService.addFilm(this.form).subscribe((data: any) => {
+          data ? this.cFilmService.loadIndex() : this.cFilmService.loadCreate();
         });
       }
     };

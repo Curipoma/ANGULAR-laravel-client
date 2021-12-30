@@ -19,7 +19,12 @@ module.exports = {
         blue: {
           blue_1_index: "#0096d7",
           blue_2: "#064c96",
+          blue_bg_1: "#27a5b4",
+          blue_bg_2: "#6125a7",
         },
+      },
+      height: {
+        425: "425px",
       },
     },
   },

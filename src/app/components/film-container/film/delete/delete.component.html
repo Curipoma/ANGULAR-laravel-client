@@ -1,0 +1,120 @@
+<section
+  class="
+    max-w-7xl
+    w-full
+    border
+    dark:border-gray-600
+    shadow-md
+    transition
+    duration-300
+    ease-in-out
+  "
+>
+  <div
+    class="
+      max-w-7xl
+      w-full
+      flex flex-col
+      lg:flex-row lg:justify-between
+      transition
+      duration-300
+      ease-in-out
+    "
+  >
+    <section class="w-80 p-5 my-auto mx-auto">
+      <p
+        class="
+          text-gray-900
+          dark:text-gray-200
+          transition
+          duration-300
+          ease-in-out
+        "
+      >
+        <span class="font-extrabold pr-2">Id:</span> <span>{{ film.id }}</span>
+      </p>
+      <p
+        class="
+          text-gray-900
+          dark:text-gray-200
+          transition
+          duration-300
+          ease-in-out
+        "
+      >
+        <span class="font-extrabold pr-2">Name:</span>
+        <span>{{ film.name }}</span>
+      </p>
+      <p
+        class="
+          text-gray-900
+          dark:text-gray-200
+          transition
+          duration-300
+          ease-in-out
+        "
+      >
+        <span class="font-extrabold pr-2">Price: </span
+        ><span>{{ film.price }}</span>
+      </p>
+      <p
+        class="
+          text-gray-900
+          dark:text-gray-200
+          transition
+          duration-300
+          ease-in-out
+        "
+      >
+        <span class="font-extrabold pr-2"> Duration: </span
+        ><span>{{ film.duration }}</span>
+      </p>
+    </section>
+    <section
+      class="
+        w-full
+        p-5
+        my-auto
+        mx-auto
+        flex flex-col
+        sm:flex-row
+        justify-between
+      "
+    >
+      <video
+        controls
+        class="
+          h-32
+          m-auto
+          transform
+          hover:scale-110
+          transition
+          duration-300
+          ease-in-out
+        "
+        src="{{ baseApiImg }}{{ film.video_url }}"
+      ></video>
+      <img
+        class="
+          h-32
+          m-auto
+          transform
+          hover:scale-110
+          transition
+          duration-300
+          ease-in-out
+        "
+        src="{{ baseApiImg }}{{ film.cover_page_url }}"
+        alt="film cover"
+      />
+    </section>
+    <div class="my-10 w-full flex justify-center items-center">
+      <button
+        (click)="delete()"
+        class="bg-red-600 py-2 px-10 rounded text-gray-200"
+      >
+        Delete
+      </button>
+    </div>
+  </div>
+</section>

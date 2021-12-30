@@ -5,6 +5,13 @@ import { GuestGuard } from './guards/guest.guard';
 
 const routes: Routes = [
   {
+    path: 'perfil',
+    loadChildren: () =>
+      import('./components/perfil-container/perfil-container.module').then(
+        (p) => p.PerfilContainerModule
+      ),
+  },
+  {
     path: 'login',
     loadChildren: () =>
       import('./components/login/login.module').then((c) => c.ContentModule),
@@ -22,7 +29,7 @@ const routes: Routes = [
   {
     path: 'content',
     loadChildren: () =>
-      import('./components/content/content.module').then(
+      import('./components/content-container/content.module').then(
         (m) => m.ContentModule
       ),
     canActivate: [AccessClientGuardGuard],

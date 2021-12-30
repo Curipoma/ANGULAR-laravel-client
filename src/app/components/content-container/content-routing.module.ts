@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ContentComponent } from './content.component';
+import { ContentContainerComponent } from './content-container.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: ContentComponent,
+    component: ContentContainerComponent,
   },
 ];
 

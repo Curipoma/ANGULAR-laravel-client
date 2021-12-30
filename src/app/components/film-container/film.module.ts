@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+
 import { FilmContainerRoutingModule } from './film-routing.module';
 
 import { ViewFilmDirective } from '../../directives/view-film.directive';
@@ -11,6 +12,8 @@ import { MainComponent } from './film/main/main.component';
 import { IndexComponent } from './film/index/index.component';
 import { CreateComponent } from './film/create/create.component';
 import { FilmNavComponent } from './film/film-nav/film-nav.component';
+import { EditComponent } from './film/edit/edit.component';
+import { DeleteComponent } from './film/delete/delete.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +24,8 @@ import { FilmNavComponent } from './film/film-nav/film-nav.component';
     IndexComponent,
     CreateComponent,
     FilmNavComponent,
+    EditComponent,
+    DeleteComponent,
   ],
   imports: [
     CommonModule,
